@@ -1,0 +1,5 @@
+cd Users\Asus\PycharmProjects\cnn\assignment1
+virtualenv .env
+.env\Scripts\activate.bat
+jupyter notebook
+pip install -r requirements.txt
