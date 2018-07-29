@@ -80,12 +80,12 @@ def svm_loss_vectorized(W, X, y, reg):
   # margin[np.arange(0, margin.shape[0]), y] = -1 * np.asarray(np.sum(margin, axis=1))
   for i in xrange(margin.shape[0]):
     margin[i, y[i]] = -1 * np.sum(margin[i])
-  dW = np.dot(X.T, margin)
+  dLdW = np.dot(X.T, margin)
 
   # Average gradients as well
-  dW /= num_train
+  dLdW /= num_train
 
   # Add regularization to the gradient
-  dW += reg * W
+  dLdW += reg * W
 
   return loss, dW
